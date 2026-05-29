@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup module."""
-try:
-    from setuptools import setup, find_packages
-except ImportError:
-    from distutils.core import setup, find_packages
+from setuptools import setup
 
 
 def get_requires() -> list:
@@ -30,7 +27,16 @@ def read_description() -> str:
 
 setup(
     name='tocount',
-    packages=find_packages(),
+    packages=[
+        'tocount',
+        'tocount.deepseek_r1',
+        'tocount.llama_3_1',
+        'tocount.qwen_qwq',
+        'tocount.rule_based',
+        'tocount.tiktoken_cl100k',
+        'tocount.tiktoken_o200k',
+        'tocount.tiktoken_r50k',
+    ],
     version='0.5',
     description='ToCount: Lightweight Token Estimator',
     long_description=read_description(),
